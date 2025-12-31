@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "E2Z.Workers": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
