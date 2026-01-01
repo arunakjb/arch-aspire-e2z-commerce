@@ -11,18 +11,18 @@
   </Folder>
   <Folder Name="/E2ZShopping/Services/" />
   <Folder Name="/E2ZShopping/Services/Api/">
-    <Project Path="E2Z.Api/E2Z.Api.csproj" Id="54f63cce-66b7-412e-a2d8-70f487276679" />
+    <Project Path="Services/Api/E2Z.Api.csproj" />
   </Folder>
   <Folder Name="/E2ZShopping/Services/Storage/" />
   <Folder Name="/E2ZShopping/Services/Storage/Database/">
-    <Project Path="E2Z.DB/E2Z.DB.sqlproj" Id="87b9986c-cd97-4993-9831-cd6a200dd4b6">
+    <Project Path="Services/Storage/Database/E2Z.DB.sqlproj" Id="87b9986c-cd97-4993-9831-cd6a200dd4b6">
       <Build />
       <Deploy />
     </Project>
   </Folder>
   <Folder Name="/E2ZShopping/Services/Tests/" />
   <Folder Name="/E2ZShopping/Services/Workers/">
-    <Project Path="E2Z.Workers/E2Z.Workers.csproj" Id="082d6f5b-4dda-4a32-b024-3dfa4963f876" />
+    <Project Path="Services/Workers/E2Z.Workers.csproj" />
   </Folder>
   <Folder Name="/E2ZShopping/UI/">
     <Project Path="UI/E2Z.UI/e2z.ui.esproj">
