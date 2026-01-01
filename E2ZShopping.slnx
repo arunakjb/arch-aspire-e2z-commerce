@@ -25,7 +25,7 @@
     <Project Path="Services/Workers/E2Z.Workers.csproj" />
   </Folder>
   <Folder Name="/E2ZShopping/UI/">
-    <Project Path="UI/E2Z.UI/e2z.ui.esproj">
+    <Project Path="UI/e2z.ui.esproj">
       <Build />
       <Deploy />
     </Project>
