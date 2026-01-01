@@ -20,6 +20,9 @@
       <Deploy />
     </Project>
   </Folder>
+  <Folder Name="/E2ZShopping/Services/Storage/Persistence/">
+    <Project Path="Services/Storage/Persistence/E2Z.DB.ORM.csproj" Id="53c236b7-bc39-423c-ba1d-48ab7780e088" />
+  </Folder>
   <Folder Name="/E2ZShopping/Services/Tests/" />
   <Folder Name="/E2ZShopping/Services/Workers/">
     <Project Path="Services/Workers/E2Z.Workers.csproj" />
