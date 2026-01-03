@@ -1,20 +1,53 @@
+using E2Z.Api.EndPoints;
 using E2Z.Api.Infrastructure.Identity;
+using E2Z.DB.ORM.Context;
+using E2Z.Workers.Redis;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Register DbContext
+builder.Services.AddDbContext<E2ZDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
+// Register Redis Cache
+builder.Services.AddSingleton<IRedisConnectionManager>(options =>
+{
+    var configuration = builder.Configuration.GetConnectionString("RedisConnection");
+    return new RedisConnectionManager(configuration!);
+});
+
+// Register Endpoints
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "E2Z API",
+        Version = "v1",
+        Description = "E2Z Commerce API"
+    });
+});
+
+// Register User Context
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUserContext, UserContext>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure Swagger middleware
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "E2Z API v1");
+        options.RoutePrefix = string.Empty;
+    });
 }
 
-app.UseHttpsRedirection();
+app.MapEndpoints();
+app.Run();

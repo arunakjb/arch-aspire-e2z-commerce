@@ -4,6 +4,11 @@ namespace E2Z.Api.Services.Cart
 {
     public class CartService : ICartService
     {
+        public CartService() 
+        {
+
+        }
+
         public Task<object> AddCartItemAsync(CartDetailsDto dto)
         {
             throw new NotImplementedException();
