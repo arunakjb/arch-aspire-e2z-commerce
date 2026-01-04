@@ -19,6 +19,8 @@ namespace E2Z.DB.ORM.Repositories
         public Task<TEntity?> GetByIdAsync(int id, CancellationToken ct = default)
        => _set.FindAsync([id], ct).AsTask();
 
+        public Task<TEntity?> GetByIdAsync(Guid id, CancellationToken ct = default)
+            => _set.FindAsync([id], ct).AsTask();
         public Task<List<TEntity>> ListAsync(CancellationToken ct = default)
             => _set.AsNoTracking().ToListAsync(ct);
 

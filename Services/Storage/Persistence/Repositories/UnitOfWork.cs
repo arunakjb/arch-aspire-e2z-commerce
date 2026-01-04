@@ -1,5 +1,6 @@
 ﻿using E2Z.DB.ORM.Context;
-namespace E2Z.DB.ORM.Repositories.Interfaces
+using E2Z.DB.ORM.Repositories.Interfaces;
+namespace E2Z.DB.ORM.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

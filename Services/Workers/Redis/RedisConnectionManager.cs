@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace E2Z.Workers.Redis
 {
-    public class RedisConnectionManager: IRedisConnectionManager
+    public class RedisConnectionManager : IRedisConnectionManager
     {
         private readonly ConnectionMultiplexer
             _connection;
